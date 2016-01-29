@@ -1,0 +1,75 @@
+//Simple tic-tac-toe.
+//Code by Ethan MacDonald on 1/26/16 . 1/27/16 . 1/28/16
+//A simple tic-tac-toe game. Basic rules, one square, Xs vs Os.
+
+import java.util.*;
+public class tttmainClass {
+	//Displays a multidimensional array.
+	public static void display(String x[][]){
+		for(int row = 0; row<x.length; row++){
+			for(int column = 0; column<x[row].length; column++){
+				System.out.print(x[row][column] + "\t");
+			}
+			System.out.println();
+		}
+	}
+	//Creates and populates a multidimensional array based on a given number of rows and columns. 
+	public static String[][] populate(String s, int r, int c){
+		String array[][]= new String[r][c];
+		for(int row = 0; row<r; row++){
+			for(int column = 0; column<c; column++){
+				array[row][column] = s;
+			}
+		}
+		return array;
+	}
+	//Test update board method. Simply places an "X" in the chosen box.
+	public static String[][] updateBoard(int i, String[][] a){
+		int index = i - 1;
+		String array[][] = a;
+		switch(index){
+			case 0: array[0][0] = "[X]";
+				break;
+			case 1: array[0][1] = "[X]";
+				break;
+			case 2: array[0][2] = "[X]";
+				break;
+			case 3: array[1][0] = "[X]";
+				break;
+			case 4: array[1][1] = "[X]";
+				break;
+			case 5: array[1][2] = "[X]";
+				break;
+			case 6: array[2][0] = "[X]";
+				break;
+			case 7: array[2][1] = "[X]";
+				break;
+			case 8: array[2][2] = "[X]";
+				break;
+		}
+		return array;	
+	}
+	public static void main(String[] args) {
+		/* //This commented section accomplishes essentially the same thing as the running code, although
+		 * //it does not require manual creation of the array. 
+		 * 
+		 * String gameBoard[][] = {{"[]","[]","[]"},{"[]","[]","[]"},{"[]","[]","[]"}}; 
+		 * display(gameBoard); */
+		int run = 1;
+		Scanner input = new Scanner(System.in);
+		String gameBoard[][] = populate("[ ]", 3, 3);
+		
+		do {
+			display(gameBoard);
+			System.out.println();
+			System.out.println("Press 1-9 to put an x in the corresponding box.");
+			int updateNum = input.nextInt();
+			gameBoard = updateBoard(updateNum, gameBoard);
+			
+			for(int i = 0; i<101; i++){
+				System.out.println("\b");
+			}
+			
+		} while (run == 1);
+	}
+}
