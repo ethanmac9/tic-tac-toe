@@ -104,7 +104,7 @@ public class gameCode {
 		String array[][] = a;
 		String check = xo;
 		int gameOver = 0;
-		if	   (array[0][0].equals(check) && array[1][0].equals(check) && array[2][0].equals(check)){gameOver = 1;}
+		if     (array[0][0].equals(check) && array[1][0].equals(check) && array[2][0].equals(check)){gameOver = 1;}
 		else if(array[0][1].equals(check) && array[1][1].equals(check) && array[2][1].equals(check)){gameOver = 1;}
 		else if(array[0][1].equals(check) && array[1][1].equals(check) && array[2][1].equals(check)){gameOver = 1;}
 		else if(array[0][1].equals(check) && array[1][1].equals(check) && array[2][1].equals(check)){gameOver = 1;}
