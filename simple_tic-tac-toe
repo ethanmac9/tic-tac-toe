@@ -1,5 +1,5 @@
 //Simple tic-tac-toe.
-//Code by Ethan MacDonald on 1/29/16
+//Code by Ethan MacDonald on 1/29/16.
 //A simple tic-tac-toe game. Basic rules, one square, Xs vs Os.
 //Sorry, the GUI is shit D:
 
@@ -46,6 +46,8 @@ public class gameCode {
 					choice = input.nextLine();
 					choice = input.nextLine(); //This addition line fixes a bug where it will not terminate.
 					if(choice.equals("n")){
+						System.out.println(xWins +" X wins, "+ oWins +" O wins, and "+ ties +" ties.");
+						System.out.println("Out of "+ total +" games.");
 						run = 0;
 					}gameBoard = populate("[ ]", 3, 3); total++; turn = 0;
 				}
@@ -58,6 +60,8 @@ public class gameCode {
 					choice = input.nextLine();
 					choice = input.nextLine(); //This addition line fixes a bug where it will not terminate.
 					if(choice.equals("n")){
+						System.out.println(xWins +" X wins, "+ oWins +" O wins, and "+ ties +" ties.");
+						System.out.println("Out of "+ total +" games.");
 						run = 0;
 					}gameBoard = populate("[ ]", 3, 3); total++; turn = 0;
 				}
@@ -87,6 +91,8 @@ public class gameCode {
 					choice = input.nextLine();
 					choice = input.nextLine(); //This addition line fixes a bug where it will not terminate.
 					if(choice.equals("n")){
+						System.out.println(xWins +" X wins, "+ oWins +" O wins, and "+ ties +" ties.");
+						System.out.println("Out of "+ total +" games.");
 						run = 0;
 					}gameBoard = populate("[ ]", 3, 3); total++; turn = 0;
 				}
@@ -99,6 +105,8 @@ public class gameCode {
 					choice = input.nextLine();
 					choice = input.nextLine(); //This addition line fixes a bug where it will not terminate.
 					if(choice.equals("n")){
+						System.out.println(xWins +" X wins, "+ oWins +" O wins, and "+ ties +" ties.");
+						System.out.println("Out of "+ total +" games.");
 						run = 0;
 					}gameBoard = populate("[ ]", 3, 3); total++; turn = 0;
 				}
