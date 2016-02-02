@@ -20,13 +20,13 @@ public class gameCode {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		String gameBoard[][] = populate("[ ]", 3, 3);
+		//Main game loop.
 		do {
 			if(player == 0){
 				//This is code is nearly identical for both players. 
 				clearscreen();
 				System.out.println("Use 1-9 to place an 'X' in a corresponding square.");
 				display(gameBoard);
-				
 				System.out.println("The current score is: ");
 				System.out.println(xWins +" X wins, "+ oWins +" O wins, and "+ ties +" ties.");
 				System.out.println("Out of "+ total +" games.");
@@ -73,7 +73,6 @@ public class gameCode {
 				clearscreen();
 				System.out.println("Use 1-9 to place an 'O' in a corresponding square.");
 				display(gameBoard);
-				
 				System.out.println("The current score is: ");
 				System.out.println(xWins +" X wins, "+ oWins +" O wins, and "+ ties +" ties.");
 				System.out.println("Out of "+ total +" games.");
@@ -117,28 +116,29 @@ public class gameCode {
 			}
 		}while(run == 1);	
 	}
+	
 	//Updates the game board.
 	public static String[][] updateBoard(int i, String a[][], String xo){
 		int index = i - 1;
 		String array[][] = a;
 		switch(index){
-			case 0: array[0][0] = "[" + xo + "]";
+			case 0: if(array[0][0].equals("[ ]")){array[0][0] = "[" + xo + "]";}
 				break;
-			case 1: array[0][1] = "[" + xo + "]";
+			case 1: if(array[0][1].equals("[ ]")){array[0][1] = "[" + xo + "]";}
 				break;
-			case 2: array[0][2] = "[" + xo + "]";
+			case 2: if(array[0][2].equals("[ ]")){array[0][2] = "[" + xo + "]";}
 				break;
-			case 3: array[1][0] = "[" + xo + "]";
+			case 3: if(array[1][0].equals("[ ]")){array[1][0] = "[" + xo + "]";}
 				break;
-			case 4: array[1][1] = "[" + xo + "]";
+			case 4: if(array[1][1].equals("[ ]")){array[1][1] = "[" + xo + "]";}
 				break;
-			case 5: array[1][2] = "[" + xo + "]";
+			case 5: if(array[1][2].equals("[ ]")){array[1][2] = "[" + xo + "]";}
 				break;
-			case 6: array[2][0] = "[" + xo + "]";
+			case 6: if(array[2][0].equals("[ ]")){array[2][0] = "[" + xo + "]";}
 				break;
-			case 7: array[2][1] = "[" + xo + "]";
+			case 7: if(array[2][1].equals("[ ]")){array[2][1] = "[" + xo + "]";}
 				break;
-			case 8: array[2][2] = "[" + xo + "]";
+			case 8: if(array[2][2].equals("[ ]")){array[2][2] = "[" + xo + "]";}
 				break;
 		}return array;	
 	}
@@ -149,17 +149,15 @@ public class gameCode {
 		int gameOver = 0;
 		if	   (array[0][0].equals(check) && array[1][0].equals(check) && array[2][0].equals(check)){gameOver = 1;}
 		else if(array[0][1].equals(check) && array[1][1].equals(check) && array[2][1].equals(check)){gameOver = 1;}
-		else if(array[0][1].equals(check) && array[1][1].equals(check) && array[2][1].equals(check)){gameOver = 1;}
-		else if(array[0][1].equals(check) && array[1][1].equals(check) && array[2][1].equals(check)){gameOver = 1;}
-		else if(array[0][1].equals(check) && array[1][1].equals(check) && array[2][1].equals(check)){gameOver = 1;}
-		else if(array[0][1].equals(check) && array[1][1].equals(check) && array[2][1].equals(check)){gameOver = 1;}
-		else if(array[0][1].equals(check) && array[1][1].equals(check) && array[2][1].equals(check)){gameOver = 1;}
-		else if(array[0][1].equals(check) && array[1][1].equals(check) && array[2][1].equals(check)){gameOver = 1;}
+		else if(array[0][2].equals(check) && array[1][2].equals(check) && array[2][2].equals(check)){gameOver = 1;}
+		else if(array[0][0].equals(check) && array[0][1].equals(check) && array[0][2].equals(check)){gameOver = 1;}
+		else if(array[1][0].equals(check) && array[1][1].equals(check) && array[1][2].equals(check)){gameOver = 1;}
+		else if(array[2][0].equals(check) && array[2][1].equals(check) && array[2][2].equals(check)){gameOver = 1;}
+		else if(array[0][0].equals(check) && array[1][1].equals(check) && array[2][2].equals(check)){gameOver = 1;}
+		else if(array[2][0].equals(check) && array[1][1].equals(check) && array[0][2].equals(check)){gameOver = 1;}
 		if     (i>8){gameOver = 2;}
 		return gameOver;
 	}
-	
-	
 	//Displays the multidimensional array.
 	public static void display(String a[][]){
 		for(int row=0; row<a.length; row++){
